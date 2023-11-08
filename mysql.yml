@@ -15,6 +15,7 @@
     - name: Start MySQL Service
       ansible.builtin.systemd:
         name: mysqld
+        state: restarted
         enabled: yes
     - name: Set MySQL Password
       ansible.builtin.shell: mysql_secure_installation --set-root-pass {{MYSQL_ROOT_PASSWORD}}
